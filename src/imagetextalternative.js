@@ -34,6 +34,6 @@ export default class ImageTextAlternative extends Plugin {
 	 * @inheritDoc
 	 */
 	static get pluginName() {
-		return 'ImageTextAlternative';
+		return 'OwlImageTextAlternative';
 	}
 }

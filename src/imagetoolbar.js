@@ -40,7 +40,7 @@ export default class ImageToolbar extends Plugin {
 	 * @inheritDoc
 	 */
 	static get pluginName() {
-		return 'ImageToolbar';
+		return 'OwlImageToolbar';
 	}
 
 	/**

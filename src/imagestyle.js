@@ -33,7 +33,7 @@ export default class ImageStyle extends Plugin {
 	 * @inheritDoc
 	 */
 	static get pluginName() {
-		return 'ImageStyle';
+		return 'OwlImageStyle';
 	}
 }
 
