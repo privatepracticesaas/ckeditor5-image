@@ -48,7 +48,7 @@ export default class ImageEditing extends Plugin {
 			isObject: true,
 			isBlock: true,
 			allowWhere: '$block',
-			allowAttributes: [ 'alt', 'src', 'srcset' ]
+			allowAttributes: [ 'alt', 'src', 'srcset', 'height' ]
 		} );
 
 		conversion.for( 'dataDowncast' ).add( downcastElementToElement( {
