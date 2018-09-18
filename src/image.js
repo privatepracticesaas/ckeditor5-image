@@ -41,7 +41,7 @@ export default class Image extends Plugin {
 	 * @inheritDoc
 	 */
 	static get pluginName() {
-		return 'Image';
+		return 'OwlImage';
 	}
 }
 
