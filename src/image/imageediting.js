@@ -62,6 +62,7 @@ export default class ImageEditing extends Plugin {
 		} ) );
 
 		conversion.for( 'downcast' )
+			.add( modelToViewAttributeConverter( 'height' ) )
 			.add( modelToViewAttributeConverter( 'src' ) )
 			.add( modelToViewAttributeConverter( 'alt' ) )
 			.add( srcsetAttributeConverter() );
@@ -71,10 +72,14 @@ export default class ImageEditing extends Plugin {
 				view: {
 					name: 'img',
 					attributes: {
-						src: true
+						src: true,
+						height: true
 					}
 				},
-				model: ( viewImage, modelWriter ) => modelWriter.createElement( 'image', { src: viewImage.getAttribute( 'src' ) } )
+				model: ( viewImage, modelWriter ) => modelWriter.createElement( 'image', {
+					src: viewImage.getAttribute( 'src' ),
+					height: viewImage.getAttribute('height')
+				} )
 			} ) )
 			.add( upcastAttributeToAttribute( {
 				view: {
@@ -97,6 +102,10 @@ export default class ImageEditing extends Plugin {
 
 						if ( viewImage.hasAttribute( 'width' ) ) {
 							value.width = viewImage.getAttribute( 'width' );
+						}
+
+						if ( viewImage.hasAttribute( 'height' ) ) {
+							value.height = viewImage.getAttribute( 'height' );
 						}
 
 						return value;
